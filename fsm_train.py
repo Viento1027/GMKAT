@@ -14,12 +14,8 @@ from my_dataset import GisDataSet
 from utils import read_split_gisdata, train_one_epoch, evaluate, calculate_metrics
 from sklearn.metrics import roc_auc_score
 
-from GMKATmodel import gmkat_multiscale as create_model_gmkat
-from GMTmodel import gmt_base as create_model_gmt
-from vit_model import vit_gis_large as create_model_vit
-from swint_model import swin_tiny as create_model_swint
-from resnet_model import resnet18 as create_model_resnet
-from GMKATmodel import gmkat_ablation as create_model_ablation
+from GMKAT import gmkat_base as create_model_gmkat
+
 
 
 def set_random_seeds(seed=1027):

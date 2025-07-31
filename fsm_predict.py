@@ -3,7 +3,7 @@ import numpy as np
 import time
 import os
 from create_dataset_from_tiff import read_tif, map_cut
-from GMKAT import gmkat_base as create_model_gmt
+from GMKAT import gmkat_base as create_model_gmkat
 
 # 开始计时
 start_time = time.time()
@@ -20,7 +20,7 @@ for x in range(gis_map.shape[0]):
 valid = np.array(valid)
 print("预测样本数量：", valid.shape[0])
 
-model = create_model_gmt()
+model = create_model_gmkat()
 model.load_state_dict(torch.load("./results/GMTKAN/GMTKAN_weights.pth"))
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = model.to(device)
